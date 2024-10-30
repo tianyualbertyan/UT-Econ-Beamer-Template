@@ -1,0 +1,167 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer template by Tianyu Yan 
+% Colors based on UT Brand Guide (http://www.utexas.edu/brand-guidelines)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{beamer}
+\usepackage{amsmath,amssymb,amsfonts,amscd} % Math packages for equations
+\usepackage{graphicx} % For including images
+\usepackage{pgfpages} % To manage page layouts
+\usefonttheme[onlymath]{serif} % Use serif fonts for math
+\usetheme{Madrid} % Presentation theme (other options: Malmoe, Boadilla)
+\usecolortheme[RGB={191,87,0}]{structure} % Burnt Orange color theme
+\definecolor{burntorange}{RGB}{191,87,0} % Define custom color Burnt Orange
+\setbeamertemplate{items}[circle] % Use circular bullets in lists
+\beamertemplatenavigationsymbolsempty % Remove navigation symbols
+\usepackage{tabularx} % For better tables
+\usepackage{subfigure} % For subfigures
+\usepackage{multicol} % For multi-column layouts
+\usepackage{hyperref} % For clickable links
+\usepackage{xcolor} % For custom colors
+
+%% Additional styling for lists and notes
+\renewcommand*{\thesubfigure}{} % Remove numbering from subfigures
+\setbeamercolor*{enumerate item}{fg=black}
+\setbeamercolor*{enumerate subitem}{fg=black}
+\setbeamercolor*{enumerate subsubitem}{fg=black}
+\setbeamerfont{note page}{size=\tiny}
+
+%% Customize the frame title appearance (burnt orange text)
+\setbeamercolor{frametitle}{bg=white, fg=burntorange}
+\setbeamercolor{section in head/foot}{bg=burntorange, fg=white}
+
+%% Hide the navigation bar on the title page
+\setbeamertemplate{headline}{}
+
+% Define reusable strings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TITLE HERE % TITLE HERE % TITLE HERE  % paper title %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\myname}{Author Name}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NAME HERE % NAME HERE % NAME HERE  % author name%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\papertitle}{Paper Title}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FOOTLINE TITLE % FOOTLINE TITLE %FOOTLINE TITLE %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\footlinetitle}{Footline Paper Title}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FOOTLINE HERE % FOOTLINE HERE % FOOTLINE HERE % Footline%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.5ex,dp=1ex,center]{author in head/foot}%
+      \usebeamerfont{author in head/foot}
+      \textbf{\myname}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.50\paperwidth,ht=2.5ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}
+      \textbf{\footlinetitle}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.5ex,dp=1ex,right]{date in head/foot}%
+      \usebeamerfont{date in head/foot}
+      \insertshortdate{}\hspace*{2em}
+      \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+    \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+%% Navigation bar at the top - Hidden on title slide
+\setbeamertemplate{headline}
+{
+  \ifnum\insertpagenumber>1
+    \leavevmode%
+    \hbox{%
+      \begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=2.75ex,left]{section in head/foot}%
+        \usebeamerfont{section in head/foot}\hspace{0.8cm}%
+        \insertnavigation{\paperwidth} % Shows section titles as a navigation bar
+      \end{beamercolorbox}%
+    }%
+  \fi
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TITLE PAGE HERE % TITLE PAGE HERE % TITLE PAGE HERE % Title Page %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Use the defined strings in your title page and footline
+\title[\papertitle]{\textbf{\papertitle}}
+\author{\myname}
+\institute[]{Department of Economics\\
+\textcolor{burntorange}{\textbf{The University of Texas at Austin}}}
+\date{\today}
+
+\begin{document}
+
+% Title slide
+\begin{frame}
+  \bigskip
+  \bigskip
+  \bigskip
+  \bigskip
+  \titlepage
+  \vskip0pt plus 1filll
+  %\includegraphics[width=0.5\linewidth]{./figures/ECON.jpg} % Include your logo or image here if needed
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONTENT HERE % CONTENT HERE % CONTENT HERE % Content %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Add or modify your presentation content in the sections below.
+
+\section{Introduction}
+\begin{frame}{Introduction}
+  \begin{itemize}
+    \item Overview of the research problem
+    \item Motivation for the study
+    \item Key research questions
+  \end{itemize}
+\end{frame}
+
+\section{Literature Review}
+\begin{frame}{Literature Review}
+  \begin{itemize}
+    \item Previous studies on the topic
+    \item How this research fills the gap
+  \end{itemize}
+\end{frame}
+
+\section{Model}
+\begin{frame}{Model}
+  \begin{itemize}
+    \item Data sources and collection methods
+    \item Analytical techniques
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Model}
+  \begin{itemize}
+    \item Regression design
+  \end{itemize}
+\end{frame}
+
+\section{Results}
+\begin{frame}{Results}
+  \begin{itemize}
+    \item Key findings
+    \item Interpretation of results
+  \end{itemize}
+\end{frame}
+
+\section{Conclusion}
+\begin{frame}{Conclusion}
+  \begin{itemize}
+    \item Summary of findings
+    \item Implications for policy and practice
+    \item Future research directions
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
